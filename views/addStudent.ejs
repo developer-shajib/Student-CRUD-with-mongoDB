@@ -1,0 +1,54 @@
+
+<div class="add_student py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 m-auto">
+                <div class="card shadow">
+                    <div class="card-header">
+                        <h1>Add new Student</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="/add-student" method="post" enctype="multipart/form-data">
+                            <div class="my-3">
+                                <label for="">Name</label>
+                                <input name="name" class="form-control" type="text">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Email</label>
+                                <input name="email" class="form-control" type="text">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Cell</label>
+                                <input name="cell" class="form-control" type="text">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Gender</label>
+                                <select name="gender" class="form-control" id="">
+                                    <option value="Male" selected>Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="my-3">
+                                <label for="">Location</label>
+                                <input name="location" class="form-control" type="text">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Photo</label>
+                                <img id="preview_img"  alt="">
+                                <br>
+                                <label for="stu_img">
+                                    <img class="file_img" src="images/gallery-10.png" alt="">
+                                </label>
+                                <input id="stu_img" name="stu_img" class="form-control" type="file">
+                                
+                            </div>
+                            <div class="my-3">
+                                <input class="form-control btn btn-primary" type="submit" value="Create">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

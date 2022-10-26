@@ -1,0 +1,101 @@
+
+    <div class="homepage py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 m-auto">
+                    <div class="card shadow">
+                        <div class="card-header">
+                            Student List
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped">
+                                <a class="btn btn-dark" href="http://localhost:5050/add-student">Add Student</a>
+                                <thead class="">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Cell</th>
+                                        <th>Gender</th>
+                                        <th>Photo</th>
+                                        <th>Location</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <% stu_data.forEach((data,index) => { %>
+                                      <tr class="align-middle">
+                                        <td scope="row"><%= index + 1 %> </td>
+                                        <td><%= data.name %> </td>
+                                        <td><%= data.email %> </td>
+                                        <td><%= data.cell %> </td>
+                                        <td><%= data.gender %> </td>
+                                        <td>
+                                            <% if (data.photo == "avatar.png") { %>
+                                             <img class="stu_table_img" src="/images/avatar.png" alt="">
+                                             <% } else { %>
+                                                <img class="stu_table_img" src="/images/stu_img/<%= data.photo %> " alt="">
+                                            <% } %>
+                                            
+                                        </td>
+                                        <td><%= data.location %> </td>
+                                        <td>
+                                            
+                                            <a class="btn btn-sm btn-info" href="/<%= data._id %> "><i class="fa-solid fa-eye"></i></a>
+                                            <a class="btn btn-sm btn-primary" href="/update/<%= data._id %>" ><i class="fa-regular fa-pen-to-square"></i></a>
+                                            <a class="btn btn-sm btn-danger" href="/delete/<%= data._id %> "><i class="fa-solid fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- ===========single view Modal============= -->
+<div class="modal fade" id="modelId" >
+    <div class="modal-dialog modal-dialog-center">
+        <div class="modal-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 m-auto py-5 m-auto">
+
+                        <% stu_data.forEach(data => { %>
+                          <img class="single_stu" src="https://img.freepik.com/free-photo/breathtaking-shot-beautiful-stones-turquoise-water-lake-hills-background_181624-12847.jpg?w=2000" alt="">
+
+                                
+                                <div class="single_stu_list">
+                                <h3>Name : <%= data.name %> </h3>
+                                <h3>Email : <%= data.email %>  </h3>
+                                <h3>Cell :  <%= data.cell %>  </h3>
+                                <h3>Gender : <%= data.gender %> </h3>
+                                <h3>Location : <%= data.location %> </h3>
+                                </div>
+                        <% }) %>
+                        
+                               
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#exampleModal').on('show.bs.modal', event => {
+        var button = $(event.relatedTarget);
+        var modal = $(this);
+        // Use above variables to manipulate the DOM
+        
+    });
+</script>
+

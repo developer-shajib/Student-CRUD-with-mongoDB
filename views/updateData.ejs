@@ -1,0 +1,68 @@
+
+<div class="add_student py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 m-auto">
+                <div class="card shadow">
+                    <div class="card-header">
+                        <h1>Update Data</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="/update/<%= update_stu_data._id %> " method="post" enctype="multipart/form-data">
+                            <div class="my-3">
+                                <label for="">Name</label>
+                                <input name="name" class="form-control" value="<%= update_stu_data.name %> " type="text">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Email</label>
+                                <input name="email" class="form-control" value="<%= update_stu_data.email %>" type="text">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Cell</label>
+                                <input name="cell" class="form-control" value="<%= update_stu_data.cell %> " type="text">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Gender</label>
+                                <select name="gender" class="form-control" id="">
+                                    <% if (update_stu_data.gender == "Male") { %>
+                                        <option value="Male" selected>Male</option>
+                                        <option value="Female">Female</option>
+
+                                     <% } else { %>
+                                        <option value="Male">Male</option>
+                                        <option selected value="Female">Female</option>
+
+                                    <% } %>
+                                    
+                                </select>
+                            </div>
+                            <div class="my-3">
+                                <label for="">Location</label>
+                                <input name="location" class="form-control" value="<%= update_stu_data.location %> " type="text">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Photo</label>
+                                <br>
+                                <% if (update_stu_data.photo == 'avatar.png') { %>
+                                    <img id="preview_img" style="max-width:100%; height: 400px;" class="preview_img" src="/images/<%= update_stu_data.photo %> "  alt="">
+                                    <% } else { %>
+                                    <img id="preview_img" style="max-width:100%; height: 100px;" src="/images/stu_img/<%= update_stu_data.photo %> "  alt="">
+
+                                <% } %>
+                                <br>
+                                <label for="stu_img">
+                                    <img class="file_img" style="width: 75px; height: 50px; object-fit: cover;" src="/images/gallery-10.png" alt="">
+                                </label>
+                                <input id="stu_img" value="<%= update_stu_data.photo %> " name="stu_img" class="form-control" type="file">
+                                
+                            </div>
+                            <div class="my-3">
+                                <input class="form-control btn btn-primary" type="submit" value="Create">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

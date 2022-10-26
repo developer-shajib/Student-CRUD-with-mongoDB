@@ -1,0 +1,37 @@
+.file_img {
+    height: 52px;
+    width: 64px;
+    object-fit: cover;
+    cursor: pointer;
+}
+#stu_img{
+    display: none;
+}
+img{
+    max-width: 100%;
+}
+
+.single_stu {
+    height: 178px;
+    width: 60%;
+    object-fit: cover;
+    margin: auto;
+}
+.single_stu_list {
+    width: 46%;
+    padding-top: 34px;
+}
+.single_stu_list h3 {
+    font-size: 15px;
+    display: block;
+    color: #0068ff;
+}
+.stu_table_img {
+    height: 44px;
+    width: 44px;
+    border-radius: 4px;
+}
+#preview_img {
+    max-width: 100% !important;
+    height: 153px !important;
+}
